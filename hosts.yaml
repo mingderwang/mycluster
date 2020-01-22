@@ -50,3 +50,22 @@ all:
         kube-node:
     calico-rr:
       hosts: {}
+    heketi-node:
+      vars:
+        disk_volume_device_1: "/dev/sdb"
+      hosts:
+        node1:
+        node2:
+        node3:
+        node4:
+        node5:
+        node6:
+    network-storage:
+      children:
+        gfs-cluster:
+    gfs-cluster:
+      hosts:
+        node3:
+        node4:
+        node5:
+        node6:
